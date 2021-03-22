@@ -6,13 +6,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMP 2132 - Project | Sherwin Leung</title>
+
+    <!-- css stylesheet link -->
+    <link rel="stylesheet" href="styles/styles.css?cb=1">
+    <!-- script below for icons -->
+    <script src="https://kit.fontawesome.com/dc43fe7493.js" crossorigin="anonymous"></script>
+    <!-- jquery (note to self, keep it at the very top)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body class="index-main">
 
+    <header>
+        <!-- i normally have my nav bar or something here, but none as this is a one page project -->
+    </header>
 
+    <main>
+
+        <section class="hero-section">
+            <div class="index-hero-pointer">
+                <a href="#info">
+                    <h1>Fancy a game of dice?</h1>
+                    <i class="fas fa-dice"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <div class="dice-game">
+                <div class="outer-box">
+                    <div class="player-box you-box">
+                        <img src="images/dice-faceless.png" id="player-dice-1" alt="Player's first dice">
+                        <img src="images/dice-faceless.png" id="player-dice-2" alt="Player's second dice">
+                    </div>
+
+                    <div class="player-box opponent-box">
+                        <img src="images/dice-faceless.png" id="opponent-dice-1" alt="Opponent's first dice">
+                        <img src="images/dice-faceless.png" id="opponent-dice-2" alt="Opponent's second dice">
+
+                    </div>
+
+                    <div class="test"></div>
+
+                </div> <!-- end outer box-->
+            </div> <!-- end dice-game -->
+
+            <div class="info">
+                <h2>
+                    Welcome to your brief respite, adventurer.<br>
+                    You and your companions have travelled long - why not play a game of dice after making camp?
+                </h2>
+                <p>
+                    The rules are simple.<br>
+                    The game will go on for three rounds. During each round, you and your opponent will both roll a pair
+                    of dice.<br>
+                    At the end of the three rounds, the player with the most points win.<br><br>
+
+                    Here are how points are calculated:<br><br>
+                <ol>
+                    <li>
+                        If a player rolls a 1 on either of their dice, they score 0 for the round.
+                    </li>
+                    <li>
+                        If a player rolls a pair of the same numbers, then they score the sum of both dice multiplied by
+                        two.
+                    </li>
+                    <li>
+                        Otherwise, a player will score the sum of their two dice.
+                    </li>
+                </ol>
+
+                To begin, press the "Roll Dice" button. Press the button again to advance to the next round.<br>
+                To start a new game, press the "Reset" button.<br><br>
+
+                Good luck!
+                </p>
+            </div> <!-- end info -->
+        </section> <!-- end game-section -->
+
+    </main>
+
+    <!-- my written scripts -->
     <script src="scripts/scripts.js"></script>
-
 </body>
 
 </html>

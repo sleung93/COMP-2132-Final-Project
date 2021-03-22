@@ -1,12 +1,16 @@
-/*
-Dice Class
-*/
-class Dice {
+/**
+Game Class
+**/
+
+class Game {
      // Constructor to create the Player object
-     constructor(diceFace1, diceFace2, points) {
-          this.diceFace1 = "faceless";
-          this.diceFace2 = "faceless";
-          this.points = 0;
+     constructor(playerDice1, playerDice2, opponentDice1, opponentDice2, playerPoints, opponentPoints) {
+          this.playerDice1 = "faceless";
+          this.playerDice2 = "faceless";
+          this.opponentDice1 = "faceless";
+          this.opponentDice2 = "faceless";
+          this.playerPoints = 0;
+          this.opponentPoints = 0;
      }
 
      /**
@@ -16,13 +20,14 @@ class Dice {
           return Math.floor(Math.random() * 6) + 1;
      }
 
-     playGame() {
-          const roll1 = this.rollDice();
-          const roll2 = this.rollDice();
+     /**
+      * Function calculates the total points for each round
+      * @param {*} roll1
+      * @param {*} roll2
+      * @returns points
+      */
+     calculatePoints(roll1, roll2) {
           let points;
-
-          console.log(`First dice rolled a ${roll1}`);
-          console.log(`Second dice rolled a ${roll2}`);
 
           // if either dice rolls a 1, score 0 for the round
           // if both dice are the same, score the sum the two and double it
@@ -35,45 +40,80 @@ class Dice {
                points = roll1 + roll2;
           }
 
-          console.log(`Points: ${points}`);
-
-          /* SET SOME PICTURES HERE@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-          this.diceFace1 = roll1;
-          this.diceFace2 = roll2;
-
-          src(../{diceFace1}) etc
-           */
-          this.diceFace1 = roll1;
-          this.diceFace2 = roll2;
-
-          this.points += points;
           return points;
      }
 
      /**
+      * Updates graphical images of dice
+      */
+     setImages() {
+          // updates graphical dice images
+          // first, create variables to store path
+          const pImage1 = `images/dice-${this.playerDice1}.png`;
+          const pImage2 = `images/dice-${this.playerDice2}.png`;
+          const oImage1 = `images/dice-${this.opponentDice1}.png`;
+          const oImage2 = `images/dice-${this.opponentDice2}.png`;
+
+          // second, use jQuery to select imgs
+          // then set them src for the imgs to the saved url from above
+          const $pDice1 = $("#player-dice-1"); // player's
+          const $pDice2 = $("#player-dice-2");
+          $pDice1.attr("src", pImage1);
+          $pDice2.attr("src", pImage2);
+
+          const $oDice1 = $("#opponent-dice-1"); // opponent's
+          const $oDice2 = $("#opponent-dice-2");
+          $oDice1.attr("src", oImage1);
+          $oDice2.attr("src", oImage2);
+     }
+
+     /**
+      * Rolls a pair of dice for both player and opponent
+      * Calls functions rollDice() and setImages()
+      */
+     playGame() {
+          // keeps track of rolls
+          this.playerDice1 = this.rollDice();
+          this.playerDice2 = this.rollDice();
+          this.opponentDice1 = this.rollDice();
+          this.opponentDice2 = this.rollDice();
+
+          // keeps track of points
+          this.playerPoints += this.calculatePoints(this.playerDice1, this.playerDice2);
+          this.opponentPoints += this.calculatePoints(this.opponentDice1, this.opponentDice2);
+
+          this.setImages();
+
+          // testing
+          console.log(`Player first dice rolled a ${this.playerDice1}`);
+          console.log(`Player second dice rolled a ${this.playerDice2}`);
+          console.log(`Player points: ${this.playerPoints}`);
+          console.log("");
+          console.log(`Opponent first dice rolled a ${this.opponentDice1}`);
+          console.log(`Opponent second dice rolled a ${this.opponentDice2}`);
+          console.log(`Opponent points: ${this.opponentPoints}`);
+     }
+
+     /**
       * Resets game back to beginning state
+      * Resets graphical images as well
       */
      resetGame() {
-          this.diceFace1 = "faceless";
-          this.diceFace2 = "faceless";
+          this.playerDice1 = "faceless";
+          this.playerDice2 = "faceless";
+          this.opponentDice1 = "faceless";
+          this.opponentDice2 = "faceless";
           this.points = 0;
+
+          this.setImages();
+
+          console.log("");
+          console.log("Reset game!");
      }
 }
 
 // testing
-const dice = new Dice();
+const game = new Game();
 
-dice.playGame();
-console.log(`Face1: ${dice.diceFace1}`);
-console.log(`Face2: ${dice.diceFace2}`);
-console.log(`Points: ${dice.points}`);
-
-dice.playGame();
-console.log(`Face1: ${dice.diceFace1}`);
-console.log(`Face2: ${dice.diceFace2}`);
-console.log(`Points: ${dice.points}`);
-
-dice.resetGame();
-console.log(`Face1: ${dice.diceFace1}`);
-console.log(`Face2: ${dice.diceFace2}`);
-console.log(`Points: ${dice.points}`);
+game.playGame();
+game.resetGame();
