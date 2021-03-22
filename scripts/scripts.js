@@ -1,7 +1,6 @@
 /**
 Game Class
 **/
-
 class Game {
      // Constructor to create the Player object
      constructor(playerDice1, playerDice2, opponentDice1, opponentDice2, playerPoints, opponentPoints) {
