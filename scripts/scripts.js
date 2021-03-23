@@ -47,7 +47,6 @@ class Game {
       * Updates graphical images of dice
       */
      setImages() {
-          // updates graphical dice images
           // first, create variables to store path
           const pImage1 = `images/dice-${this.playerDice1}.png`;
           const pImage2 = `images/dice-${this.playerDice2}.png`;
@@ -67,6 +66,20 @@ class Game {
           $oDice2.attr("src", oImage2);
      }
 
+     updatePoints(playerRound, playerTotal, opponentRound, opponentTotal) {
+          // selects h3s to display points and stores it in a variable
+          // then select that variable's text to parameters
+          const $pRound = $("#player-round-score");
+          const $pTotal = $("#player-total-score");
+          $pRound.text(`Points scored this round: ${playerRound}`);
+          $pTotal.text(`Total points: ${playerTotal}`);
+
+          const $oRound = $("#opponent-round-score");
+          const $oTotal = $("#opponent-total-score");
+          $oRound.text(`Points scored this round: ${opponentRound}`);
+          $oTotal.text(`Total points: ${opponentTotal}`);
+     }
+
      /**
       * Rolls a pair of dice for both player and opponent
       * Calls functions rollDice() and setImages()
@@ -78,11 +91,19 @@ class Game {
           this.opponentDice1 = this.rollDice();
           this.opponentDice2 = this.rollDice();
 
-          // keeps track of points
-          this.playerPoints += this.calculatePoints(this.playerDice1, this.playerDice2);
-          this.opponentPoints += this.calculatePoints(this.opponentDice1, this.opponentDice2);
+          // keeps track of POINTS EARNED EACH ROUND
+          const playerResults = this.calculatePoints(this.playerDice1, this.playerDice2);
+          const opponentResults = this.calculatePoints(this.opponentDice1, this.opponentDice2);
 
+          // keeps track of TOTAL POINTS
+          this.playerPoints += playerResults;
+          this.opponentPoints += opponentResults;
+
+          // displays the dice rolled graphically
           this.setImages();
+
+          // updates text to display current round's earned points and total points
+          this.updatePoints(playerResults, this.playerPoints, opponentResults, this.opponentPoints);
 
           // testing
           console.log(`Player first dice rolled a ${this.playerDice1}`);

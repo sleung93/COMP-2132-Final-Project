@@ -33,25 +33,36 @@
         </section>
 
         <section class="game-section">
+
             <div class="dice-game">
                 <div class="outer-box">
                     <div class="player-box you-box">
+                        <h2>You</h2>
+                        <h3 id="player-total-score">***</h3>
                         <img src="images/dice-faceless.png" id="player-dice-1" alt="Player's first dice">
                         <img src="images/dice-faceless.png" id="player-dice-2" alt="Player's second dice">
+                        <h3 id="player-round-score">***</h3>
                     </div>
 
                     <div class="player-box opponent-box">
+                        <h2>Opponent</h2>
+                        <h3 id="opponent-total-score">***</h3>
                         <img src="images/dice-faceless.png" id="opponent-dice-1" alt="Opponent's first dice">
                         <img src="images/dice-faceless.png" id="opponent-dice-2" alt="Opponent's second dice">
-
+                        <h3 id="opponent-round-score">***</h3>
                     </div>
                 </div> <!-- end outer box-->
+
+                <div class="buttons">
+                    <button id="roll-dice">Roll Dice</button>
+                    <button id="new-round">New Round</button>
+                </div>
             </div> <!-- end dice-game -->
 
             <div class="info">
                 <h2>
                     Welcome to your brief respite, adventurer.<br>
-                    You and your companions have travelled long - why not play a game of dice after making camp?
+                    You and your companions have travelled far - why not play a game of dice after making camp?
                 </h2>
                 <p>
                     The rules are simple.<br>
@@ -59,13 +70,13 @@
                     of dice.<br>
                     At the end of the three rounds, the player with the most points win.<br><br>
 
-                    Here are how points are calculated:<br><br>
+                    Here are how points for each round are calculated:<br><br>
                 <ol>
                     <li>
                         If a player rolls a 1 on either of their dice, they score 0 for the round.
                     </li>
                     <li>
-                        If a player rolls a pair of the same numbers, then they score the sum of both dice multiplied by
+                        If a player rolls a pair of the same numbers, they score the sum of both dice multiplied by
                         two.
                     </li>
                     <li>
@@ -79,6 +90,7 @@
                 Good luck!
                 </p>
             </div> <!-- end info -->
+
         </section> <!-- end game-section -->
 
     </main>
