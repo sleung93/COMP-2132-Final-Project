@@ -1,7 +1,6 @@
 /**
 Game Class
 **/
-
 class Game {
      // Constructor to create the Player object
      constructor(playerDice1, playerDice2, opponentDice1, opponentDice2, playerPoints, opponentPoints) {
@@ -72,12 +71,12 @@ class Game {
           const $pRound = $("#player-round-score");
           const $pTotal = $("#player-total-score");
           $pRound.text(`Points scored this round: ${playerRound}`);
-          $pTotal.text(`Total points: ${playerTotal}`);
+          $pTotal.text(`Total Points: ${playerTotal}`);
 
           const $oRound = $("#opponent-round-score");
           const $oTotal = $("#opponent-total-score");
           $oRound.text(`Points scored this round: ${opponentRound}`);
-          $oTotal.text(`Total points: ${opponentTotal}`);
+          $oTotal.text(`Total Points: ${opponentTotal}`);
      }
 
      /**
@@ -116,6 +115,20 @@ class Game {
      }
 
      /**
+      * Function declares a winner based on whoever has the most points
+      * @returns a String to be used in the $results text
+      */
+     declareWinner() {
+          if (this.playerPoints > this.opponentPoints) {
+               return `You won! You have ${this.playerPoints} points and your opponent has ${this.opponentPoints} points.`;
+          } else if (this.opponentPoints > this.playerPoints) {
+               return `You lost! You have ${this.playerPoints} points and your opponent has ${this.opponentPoints} points.`;
+          } else {
+               return `It was a draw! You have ${this.playerPoints} points and your opponent has ${this.opponentPoints} points.`;
+          }
+     }
+
+     /**
       * Resets game back to beginning state
       * Resets graphical images
       * Resets score tally
@@ -134,25 +147,39 @@ class Game {
           console.log("");
           console.log("Reset game!");
      }
-
-     buttons() {
-          const $rollButton = $("#roll-dice");
-          const $newGameButton = $("#new-game");
-
-          $rollButton.click(this.playGame);
-     }
 }
 
 /**
- * Buttons for:
- * Roll Dice
- * New Game
+ * Buttons
+ * Includes: Roll Dice and New Game buttons
  */
 
-// select buttons with jQuery
-const $rollButton = $("#roll-dice");
-const $newGameButton = $("#new-game");
-// create a new Game object named "gameObject"
+// create a new Game object named "gameObject" - note: must be created OUTSIDE click function so object is stored in memory
 const gameObject = new Game();
-// when the Roll Dice button is clicked, invoke gameObject's playGame()
-gameObject.buttons();
+// keeps track of current rounds
+let roundCounter = 0;
+// select h2 that will display who won after 3 rounds
+const $results = $("#results");
+
+// select Roll Dice button with jQuery
+const $rollButton = $("#roll-dice");
+// add click event to it
+$rollButton.click(function () {
+     if (roundCounter < 3) {
+          roundCounter++;
+          gameObject.playGame();
+     }
+
+     if (roundCounter === 3) {
+          $results.text(gameObject.declareWinner());
+     }
+});
+
+// select New Game button with jQuery
+const $newGameButton = $("#new-game");
+// add click event to it
+$newGameButton.click(function () {
+     gameObject.resetGame();
+     roundCounter = 0;
+     $results.text("");
+});
