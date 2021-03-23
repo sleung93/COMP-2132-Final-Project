@@ -117,24 +117,42 @@ class Game {
 
      /**
       * Resets game back to beginning state
-      * Resets graphical images as well
+      * Resets graphical images
+      * Resets score tally
       */
      resetGame() {
           this.playerDice1 = "faceless";
           this.playerDice2 = "faceless";
           this.opponentDice1 = "faceless";
           this.opponentDice2 = "faceless";
-          this.points = 0;
+          this.playerPoints = 0;
+          this.opponentPoints = 0;
 
           this.setImages();
+          this.updatePoints(0, this.playerPoints, 0, this.opponentPoints);
 
           console.log("");
           console.log("Reset game!");
      }
+
+     buttons() {
+          const $rollButton = $("#roll-dice");
+          const $newGameButton = $("#new-game");
+
+          $rollButton.click(this.playGame);
+     }
 }
 
-// testing
-const game = new Game();
+/**
+ * Buttons for:
+ * Roll Dice
+ * New Game
+ */
 
-game.playGame();
-game.resetGame();
+// select buttons with jQuery
+const $rollButton = $("#roll-dice");
+const $newGameButton = $("#new-game");
+// create a new Game object named "gameObject"
+const gameObject = new Game();
+// when the Roll Dice button is clicked, invoke gameObject's playGame()
+gameObject.buttons();
