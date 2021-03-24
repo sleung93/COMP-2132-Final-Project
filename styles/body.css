@@ -1,10 +1,27 @@
+/*
+Variables for commonly used values
+*/
+/*
+Mixins
+*/
 body {
-  background-image: url("../images/hero-1.jpg");
+  background-color: #18181a;
+  background-image: url("../images/hero-2.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-body p, body h1, body h2, body h3 {
+body p,
+body h1,
+body h2,
+body h3,
+body ul,
+body ol,
+body li {
   color: ivory;
+}
+
+body .special-text {
+  color: #850d0d;
 }

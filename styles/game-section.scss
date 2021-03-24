@@ -1,3 +1,6 @@
+@import "variables.scss";
+@import "mixins.scss";
+
 /*
 Contains styles for the game section. Includes both the dice and information sides
 */
@@ -40,10 +43,21 @@ Contains styles for the game section. Includes both the dice and information sid
           margin: 0 auto;
      }
 
+     // text displaying win or loss
      .results {
           position: absolute;
           top: 200px;
           left: 120px;
+
+          .results-text {
+               color: $results_text_color;
+          }
+     }
+
+     button {
+          @include borders(2px, solid, black);
+          // color: $text_color;
+          background-color: darkgrey;
      }
 }
 

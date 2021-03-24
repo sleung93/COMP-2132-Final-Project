@@ -64,9 +64,15 @@ html {
   scroll-snap-align: start;
 }
 
+/*
+Variables for commonly used values
+*/
+/*
+Mixins
+*/
 body {
   background-color: #18181a;
-  background-image: url("../images/hero-1.jpg");
+  background-image: url("../images/hero-2.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -80,6 +86,10 @@ body ul,
 body ol,
 body li {
   color: ivory;
+}
+
+body .special-text {
+  color: #850d0d;
 }
 
 .hero-section {
@@ -102,6 +112,12 @@ body li {
   text-shadow: 2px 0.5px 9px black;
 }
 
+/*
+Variables for commonly used values
+*/
+/*
+Mixins
+*/
 /*
 Contains styles for the game section. Includes both the dice and information sides
 */
@@ -142,6 +158,15 @@ Contains styles for the game section. Includes both the dice and information sid
   position: absolute;
   top: 200px;
   left: 120px;
+}
+
+.players-container .results .results-text {
+  color: gold;
+}
+
+.players-container button {
+  border: 2px solid black;
+  background-color: darkgrey;
 }
 
 .info {

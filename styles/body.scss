@@ -1,7 +1,10 @@
+@import "variables.scss";
+@import "mixins.scss";
+
 body {
      // its own styles
      background-color: $background_color;
-     background-image: url("../images/hero-1.jpg");
+     background-image: url("../images/hero-2.jpg");
      background-position: top;
      background-repeat: no-repeat;
      background-attachment: fixed;
@@ -14,5 +17,9 @@ body {
      ol,
      li {
           color: $text_color;
+     }
+
+     .special-text {
+          @include special-text();
      }
 }

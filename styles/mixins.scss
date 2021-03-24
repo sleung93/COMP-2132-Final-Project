@@ -2,8 +2,10 @@
 Mixins
 */
 
-// I couldn't think of many things that I wanted to have similar styles applied to
-// so I simply made a mixing that applies just borders
 @mixin borders($size, $type, $color) {
      border: $size $type $color;
+}
+
+@mixin special-text() {
+     color: $special_text_color;
 }

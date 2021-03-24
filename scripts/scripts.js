@@ -103,15 +103,6 @@ class Game {
 
           // updates text to display current round's earned points and total points
           this.updatePoints(playerResults, this.playerPoints, opponentResults, this.opponentPoints);
-
-          // for testing
-          console.log(`Player first dice rolled a ${this.playerDice1}`);
-          console.log(`Player second dice rolled a ${this.playerDice2}`);
-          console.log(`Player points: ${this.playerPoints}`);
-          console.log("");
-          console.log(`Opponent first dice rolled a ${this.opponentDice1}`);
-          console.log(`Opponent second dice rolled a ${this.opponentDice2}`);
-          console.log(`Opponent points: ${this.opponentPoints}`);
      }
 
      /**
@@ -143,10 +134,6 @@ class Game {
 
           this.setImages();
           this.updatePoints(0, this.playerPoints, 0, this.opponentPoints);
-
-          // for testing
-          console.log("");
-          console.log("Reset game!");
      }
 }
 
@@ -194,4 +181,4 @@ $heroText = $("#hero-text");
 // set opacity to 0
 $heroText.css("opacity", 0);
 // slowly change hero text opacity to 1
-$heroText.fadeTo(4100, 1);
+$heroText.fadeTo(4500, 1);
