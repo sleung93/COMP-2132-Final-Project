@@ -104,7 +104,7 @@ class Game {
           // updates text to display current round's earned points and total points
           this.updatePoints(playerResults, this.playerPoints, opponentResults, this.opponentPoints);
 
-          // testing
+          // for testing
           console.log(`Player first dice rolled a ${this.playerDice1}`);
           console.log(`Player second dice rolled a ${this.playerDice2}`);
           console.log(`Player points: ${this.playerPoints}`);
@@ -144,6 +144,7 @@ class Game {
           this.setImages();
           this.updatePoints(0, this.playerPoints, 0, this.opponentPoints);
 
+          // for testing
           console.log("");
           console.log("Reset game!");
      }
