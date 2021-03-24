@@ -23,76 +23,78 @@
 
     <main>
 
-        <section class="hero-section">
-            <div class="index-hero-pointer">
-                <div class="hero-text">
-                    <h1>Fancy a game of dice?</h1>
-                    <i class="fas fa-dice"></i>
+        <div class="snap-container">
+            <!-- doesn't work for scroll snapping??-->
+            <div class="hero-section snap">
+                <div class="index-hero-pointer">
+                    <h1 id="hero-text">Fancy a game of dice?
+                        <i class="fas fa-dice"></i>
+                    </h1>
                 </div>
             </div>
-        </section>
 
-        <section class="game-section">
-            <div class="info">
-                <div class="info-text">
-                    <h2>
-                        Welcome to your brief respite, adventurer.<br>
-                        You and your companions have travelled far - why not play a game of dice after making camp?
-                    </h2>
-                    <p>
-                        The rules are simple.<br>
-                        The game will go on for three rounds. During each round, you and your opponent will both
-                        roll a
-                        pair
-                        of dice.<br>
-                        At the end of the three rounds, the player with the most points win.<br><br>
+            <div class="game-section snap">
+                <div class="info">
+                    <div class="info-text">
+                        <h2>
+                            Welcome to your brief respite, adventurer.<br>
+                            You and your companions have travelled far - why not play a game of dice after making camp?
+                        </h2>
+                        <p>
+                            The rules are simple.<br>
+                            The game will go on for three rounds. During each round, you and your opponent will both
+                            roll a
+                            pair
+                            of dice.<br>
+                            At the end of the three rounds, the player with the most points win.<br><br>
 
-                        Here are how points for each round are calculated:<br>
+                            Here are how points for each round are calculated:<br>
 
-                        1. If a player rolls a 1 on either of their dice, they score 0 for the round.<br>
+                            1. If a player rolls a 1 on either of their dice, they score 0 for the round.<br>
 
-                        2. If a player rolls a pair of the same numbers, they score the sum of both dice multiplied
-                        by two.<br>
+                            2. If a player rolls a pair of the same numbers, they score the sum of both dice multiplied
+                            by two.<br>
 
-                        3. Otherwise, a player will score the sum of their two dice.<br><br>
+                            3. Otherwise, a player will score the sum of their two dice.<br><br>
 
-                        To begin, press the "Roll Dice" button. Press the button again to advance to the next
-                        round.<br>
-                        To start a new game, press the "New Game" button.<br><br>
+                            To begin, press the "Roll Dice" button. Press the button again to advance to the next
+                            round.<br>
+                            To start a new game, press the "New Game" button.<br><br>
 
-                        Good luck!
-                    </p>
-                </div> <!-- end info-text -->
-            </div> <!-- end info -->
+                            Good luck!
+                        </p>
+                    </div> <!-- end info-text -->
+                </div> <!-- end info -->
 
-            <div class="dice-game">
-                <div class="players-container">
-                    <div class="you-box">
-                        <div class="you-content">
-                            <h2>You</h2>
-                            <h3 id="player-total-score">Total Points: 0</h3>
-                            <img src="images/dice-faceless.png" id="player-dice-1" alt="Player's first dice">
-                            <img src="images/dice-faceless.png" id="player-dice-2" alt="Player's second dice">
-                            <h3 id="player-round-score">Points scored this round: 0</h3>
-                            <button id="new-game">New Game</button>
+                <div class="dice-game">
+                    <div class="players-container">
+                        <div class="you-box">
+                            <div class="you-content">
+                                <h2>You</h2>
+                                <h3 id="player-total-score">Total Points: 0</h3>
+                                <img src="images/dice-faceless.png" id="player-dice-1" alt="Player's first dice">
+                                <img src="images/dice-faceless.png" id="player-dice-2" alt="Player's second dice">
+                                <h3 id="player-round-score">Points scored this round: 0</h3>
+                                <button id="new-game">New Game</button>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="opponent-box">
-                        <h2>Opponent</h2>
-                        <h3 id="opponent-total-score">Total Points: 0</h3>
-                        <img src="images/dice-faceless.png" id="opponent-dice-1" alt="Opponent's first dice">
-                        <img src="images/dice-faceless.png" id="opponent-dice-2" alt="Opponent's second dice">
-                        <h3 id="opponent-round-score">Points scored this round: 0</h3>
-                        <button id="roll-dice">Roll Dice</button>
-                    </div>
+                        <div class="opponent-box">
+                            <h2>Opponent</h2>
+                            <h3 id="opponent-total-score">Total Points: 0</h3>
+                            <img src="images/dice-faceless.png" id="opponent-dice-1" alt="Opponent's first dice">
+                            <img src="images/dice-faceless.png" id="opponent-dice-2" alt="Opponent's second dice">
+                            <h3 id="opponent-round-score">Points scored this round: 0</h3>
+                            <button id="roll-dice">Roll Dice</button>
+                        </div>
 
-                    <div class="results">
-                        <h2 id="results"></h2>
-                    </div>
-                </div> <!-- end players-container -->
-            </div> <!-- end dice-game -->
-        </section> <!-- end game-section -->
+                        <div class="results">
+                            <h2 id="results"></h2>
+                        </div>
+                    </div> <!-- end players-container -->
+                </div> <!-- end dice-game -->
+            </div> <!-- end game-section -->
+        </div> <!-- end snap container -->
 
     </main>
 

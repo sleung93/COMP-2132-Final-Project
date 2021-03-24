@@ -24,7 +24,7 @@ h1,
 h2,
 h3,
 nav a {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 h1,
@@ -48,8 +48,4 @@ a:hover,
 a:focus,
 a:active {
   outline: 0;
-}
-
-html {
-  scroll-behavior: smooth;
 }

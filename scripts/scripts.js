@@ -184,3 +184,14 @@ $newGameButton.click(function () {
      roundCounter = 0;
      $results.text("");
 });
+
+/**
+ * Fade in effect for hero text (Fancy a game of dice?)
+ */
+// select the hero text
+$heroText = $("#hero-text");
+
+// set opacity to 0
+$heroText.css("opacity", 0);
+// slowly change hero text opacity to 1
+$heroText.fadeTo(4100, 1);

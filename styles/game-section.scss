@@ -4,7 +4,6 @@ Contains styles for the game section. Includes both the dice and information sid
 
 // overarching game section styles
 .game-section {
-     //  border: 2px solid blue;
      background-color: $background_color;
      height: 100vh;
      display: flex;
@@ -20,7 +19,6 @@ Contains styles for the game section. Includes both the dice and information sid
 
 // styles for the side that you play the game on
 .players-container {
-     //  border: 2px solid red;
      height: 100vh;
      display: flex;
      flex-direction: row;
@@ -31,7 +29,6 @@ Contains styles for the game section. Includes both the dice and information sid
      // player boxes styles
      .you-box,
      .opponent-box {
-          //   border: 2px solid cyan;
           width: 400px;
           text-align: center;
      }
@@ -44,7 +41,6 @@ Contains styles for the game section. Includes both the dice and information sid
      }
 
      .results {
-          //   border: 2px solid gold;
           position: absolute;
           top: 200px;
           left: 120px;
@@ -53,7 +49,6 @@ Contains styles for the game section. Includes both the dice and information sid
 
 // styles for the informational text side
 .info {
-     //  border: 10px solid green;
      position: relative;
 
      .info-text {

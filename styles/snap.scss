@@ -1,0 +1,9 @@
+// unsure why this doesn't work. it only works if i use html instead of .snap-container
+// but i don't want to select html as the whole snapping container
+html {
+     scroll-snap-type: y mandatory;
+}
+
+.snap {
+     scroll-snap-align: start;
+}
