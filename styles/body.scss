@@ -1,0 +1,18 @@
+body {
+     // its own styles
+     background-color: $background_color;
+     background-image: url("../images/hero-1.jpg");
+     background-position: top;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+
+     p,
+     h1,
+     h2,
+     h3,
+     ul,
+     ol,
+     li {
+          color: ivory;
+     }
+}

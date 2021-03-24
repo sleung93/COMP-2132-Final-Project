@@ -1,1 +1,149 @@
-null
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+nav a {
+  font-family: 'Playfair Display', serif;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+}
+
+/* removes dotted lines when hovering over a link */
+a {
+  outline: 0;
+}
+
+a:hover,
+a:focus,
+a:active {
+  outline: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #18181a;
+  background-image: url("../images/hero-1.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body p,
+body h1,
+body h2,
+body h3,
+body ul,
+body ol,
+body li {
+  color: ivory;
+}
+
+.hero-section {
+  height: 100vh;
+  position: relative;
+}
+
+.hero-section .index-hero-pointer {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.945);
+  font-size: 27px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 2px 0.5px 9px black;
+}
+
+/*
+Contains styles for the game section. Includes both the dice and information sides
+*/
+.game-section {
+  background-color: #18181a;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.dice-game,
+.info {
+  flex: 1;
+}
+
+.players-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.players-container .you-box,
+.players-container .opponent-box {
+  width: 400px;
+  text-align: center;
+}
+
+.players-container img {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.players-container .results {
+  position: absolute;
+  top: 200px;
+  left: 120px;
+}
+
+.info {
+  position: relative;
+}
+
+.info .info-text {
+  text-align: center;
+  position: absolute;
+  height: 500px;
+  width: 937px;
+  font-size: 15px;
+  margin: 0 auto;
+  padding: 25%;
+}

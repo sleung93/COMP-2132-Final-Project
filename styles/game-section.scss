@@ -1,0 +1,68 @@
+/*
+Contains styles for the game section. Includes both the dice and information sides
+*/
+
+// overarching game section styles
+.game-section {
+     //  border: 2px solid blue;
+     background-color: $background_color;
+     height: 100vh;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+}
+
+// setting display for both sectiions to 1
+.dice-game,
+.info {
+     flex: 1;
+}
+
+// styles for the side that you play the game on
+.players-container {
+     //  border: 2px solid red;
+     height: 100vh;
+     display: flex;
+     flex-direction: row;
+     //  justify-content: center; (NTS: if left in, things are too spaced apart)
+     align-items: center;
+     position: relative;
+
+     // player boxes styles
+     .you-box,
+     .opponent-box {
+          //   border: 2px solid cyan;
+          width: 400px;
+          text-align: center;
+     }
+
+     // dice images
+     img {
+          width: 150px;
+          display: block;
+          margin: 0 auto;
+     }
+
+     .results {
+          //   border: 2px solid gold;
+          position: absolute;
+          top: 200px;
+          left: 120px;
+     }
+}
+
+// styles for the informational text side
+.info {
+     //  border: 10px solid green;
+     position: relative;
+
+     .info-text {
+          text-align: center;
+          position: absolute;
+          height: 500px;
+          width: 937px;
+          font-size: 15px;
+          margin: 0 auto;
+          padding: 25%;
+     }
+}

@@ -8,7 +8,7 @@
     <title>COMP 2132 - Project | Sherwin Leung</title>
 
     <!-- css stylesheet link -->
-    <link rel="stylesheet" href="styles/styles.css?cb=1">
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- script below for icons -->
     <script src="https://kit.fontawesome.com/dc43fe7493.js" crossorigin="anonymous"></script>
     <!-- jquery (note to self, keep it at the very top)-->
@@ -33,68 +33,65 @@
         </section>
 
         <section class="game-section">
+            <div class="info">
+                <div class="info-text">
+                    <h2>
+                        Welcome to your brief respite, adventurer.<br>
+                        You and your companions have travelled far - why not play a game of dice after making camp?
+                    </h2>
+                    <p>
+                        The rules are simple.<br>
+                        The game will go on for three rounds. During each round, you and your opponent will both
+                        roll a
+                        pair
+                        of dice.<br>
+                        At the end of the three rounds, the player with the most points win.<br><br>
+
+                        Here are how points for each round are calculated:<br>
+
+                        1. If a player rolls a 1 on either of their dice, they score 0 for the round.<br>
+
+                        2. If a player rolls a pair of the same numbers, they score the sum of both dice multiplied
+                        by two.<br>
+
+                        3. Otherwise, a player will score the sum of their two dice.<br><br>
+
+                        To begin, press the "Roll Dice" button. Press the button again to advance to the next
+                        round.<br>
+                        To start a new game, press the "New Game" button.<br><br>
+
+                        Good luck!
+                    </p>
+                </div> <!-- end info-text -->
+            </div> <!-- end info -->
 
             <div class="dice-game">
-                <div class="outer-box">
-                    <div class="player-box you-box">
-                        <h2>You</h2>
-                        <h3 id="player-total-score">Total Points: 0</h3>
-                        <img src="images/dice-faceless.png" id="player-dice-1" alt="Player's first dice">
-                        <img src="images/dice-faceless.png" id="player-dice-2" alt="Player's second dice">
-                        <h3 id="player-round-score">Points scored this round: 0</h3>
+                <div class="players-container">
+                    <div class="you-box">
+                        <div class="you-content">
+                            <h2>You</h2>
+                            <h3 id="player-total-score">Total Points: 0</h3>
+                            <img src="images/dice-faceless.png" id="player-dice-1" alt="Player's first dice">
+                            <img src="images/dice-faceless.png" id="player-dice-2" alt="Player's second dice">
+                            <h3 id="player-round-score">Points scored this round: 0</h3>
+                            <button id="new-game">New Game</button>
+                        </div>
                     </div>
 
-                    <div class="player-box opponent-box">
+                    <div class="opponent-box">
                         <h2>Opponent</h2>
                         <h3 id="opponent-total-score">Total Points: 0</h3>
                         <img src="images/dice-faceless.png" id="opponent-dice-1" alt="Opponent's first dice">
                         <img src="images/dice-faceless.png" id="opponent-dice-2" alt="Opponent's second dice">
                         <h3 id="opponent-round-score">Points scored this round: 0</h3>
+                        <button id="roll-dice">Roll Dice</button>
                     </div>
-                </div> <!-- end outer box-->
 
-                <div class="buttons">
-                    <button id="new-game">New Game</button>
-                    <button id="roll-dice">Roll Dice</button>
-                </div>
-
-                <div class="results">
-                    <h2 id="results"></h2>
-                </div>
+                    <div class="results">
+                        <h2 id="results"></h2>
+                    </div>
+                </div> <!-- end players-container -->
             </div> <!-- end dice-game -->
-
-            <div class="info">
-                <h2>
-                    Welcome to your brief respite, adventurer.<br>
-                    You and your companions have travelled far - why not play a game of dice after making camp?
-                </h2>
-                <p>
-                    The rules are simple.<br>
-                    The game will go on for three rounds. During each round, you and your opponent will both roll a pair
-                    of dice.<br>
-                    At the end of the three rounds, the player with the most points win.<br><br>
-
-                    Here are how points for each round are calculated:<br><br>
-                <ol>
-                    <li>
-                        If a player rolls a 1 on either of their dice, they score 0 for the round.
-                    </li>
-                    <li>
-                        If a player rolls a pair of the same numbers, they score the sum of both dice multiplied by
-                        two.
-                    </li>
-                    <li>
-                        Otherwise, a player will score the sum of their two dice.
-                    </li>
-                </ol>
-
-                To begin, press the "Roll Dice" button. Press the button again to advance to the next round.<br>
-                To start a new game, press the "New Game" button.<br><br>
-
-                Good luck!
-                </p>
-            </div> <!-- end info -->
-
         </section> <!-- end game-section -->
 
     </main>

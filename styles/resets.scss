@@ -1,0 +1,56 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height   : auto;
+    display  : block;
+}
+
+body {
+    margin             : 0;
+    padding            : 0;
+    // font-family        : 'Merriweather', serif;
+    font-size          : 14px;
+}
+
+h1,
+h2,
+h3,
+nav a {
+    font-family: 'Playfair Display', serif;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+p {
+    line-height   : 1.7;
+    letter-spacing: 0.5px;
+}
+
+/* removes dotted lines when hovering over a link */
+a {
+    outline: 0;
+}
+
+a:hover,
+a:focus,
+a:active {
+    outline: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}

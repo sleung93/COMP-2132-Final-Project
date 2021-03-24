@@ -1,0 +1,19 @@
+.hero-section {
+     height: 100vh;
+     position: relative;
+
+     .index-hero-pointer {
+          position: absolute;
+          bottom: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 0;
+          margin: 0;
+          color: rgba(255, 255, 255, 0.945);
+          font-size: 27px;
+          text-transform: uppercase;
+          text-align: center;
+          text-decoration: none;
+          text-shadow: 2px 0.5px 9px black;
+     }
+}
